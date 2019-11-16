@@ -333,3 +333,25 @@
 			});
 
 })(jQuery);
+
+var add = document.getElementById("add");
+var remove = document.getElementById("remove");
+var stack = document.getElementById("stack")
+
+add.addEventListener("click", function() {
+	if (stack.childElementCount < 4) {
+		var item = document.createElement("div");
+		stack.appendChild(item);
+	}
+});
+
+remove.addEventListener("click", function() {	
+	stack.lastChild.style.animation = "slide-up 1s ease" 
+	stack.lastChild.addEventListener('animationend', () => {
+		stack.removeChild(stack.lastChild);
+	});
+	remove.disabled = true;
+	setTimeout(function() {
+		remove.disabled = false;
+	}, 1000);
+});

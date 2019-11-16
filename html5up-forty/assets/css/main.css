@@ -122,7 +122,7 @@ input, select, textarea {
 		}
 
 /* Type */
-
+	/* pt is an absolute length like px, but a little bigger */
 	body, input, select, textarea {
 		color: #ffffff;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -554,7 +554,9 @@ input, select, textarea {
 				box-sizing: border-box;
 				align-items: stretch;
 			}
-
+				/* > is for direct children (so the next child, none after) of the parent tag.
+				+ is for the following specified sibling element, ~ tilda works similar to +, but it selects all
+				of th specified sibling elements rather than stopping at just 1 */
 				.row > * {
 					box-sizing: border-box;
 				}
@@ -586,7 +588,10 @@ input, select, textarea {
 				.row.aln-bottom {
 					align-items: flex-end;
 				}
-
+				/* order property is for flex, and sets the order at which the item
+				is displayed that's the child of the flex display element, negative
+				changes their order to start from the end */
+				
 				.row > .imp-xlarge {
 					order: -1;
 				}
